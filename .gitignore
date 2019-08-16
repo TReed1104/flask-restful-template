@@ -1,0 +1,4 @@
+__pycache__
+.coverage
+testing.cfg
+template.cfg
