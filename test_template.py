@@ -3,7 +3,7 @@ import unittest
 from shared import db
 from template import app
 
-class FeatureTest_Template(unittest.TestCase):
+class UnitTest_Template(unittest.TestCase):
     ## Setup Functions
     def setUp(self):
         app.config.from_pyfile('testing.cfg')   ## Take a copy of example.cfg and add the test database URI, or this will crash here
@@ -16,7 +16,7 @@ class FeatureTest_Template(unittest.TestCase):
             db.session.remove()
             db.drop_all()
 
-class UnitTest_Template(unittest.TestCase):
+class FeatureTest_Template(unittest.TestCase):
     ## Setup Functions
     def setUp(self):
         app.config.from_pyfile('testing.cfg')   ## Take a copy of example.cfg and add the test database URI, or this will crash here
