@@ -1,14 +1,14 @@
 version: "3"
 services:
-    db-server:
-        container_name: template-mysql
+    db-mysql:
+        container_name: template-db
         image: mysql:latest
         command: --init-file /usr/src/app/init.sql
         volumes:
             - db_data:/var/lib/mysql
             - ./api/init.sql:/usr/src/app/init.sql
-        ports:
-            - "3306:3306"
+        expose:
+            - "3306"
         restart: always
         environment:
             MYSQL_ROOT_PASSWORD: root_password
@@ -21,7 +21,7 @@ services:
         image: treed1104/template-api:latest
         restart: always
         depends_on:
-            - db-server
+            - db-mysql
         ports:
             - 5000:5000
 volumes:
