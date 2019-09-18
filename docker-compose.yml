@@ -17,7 +17,7 @@ services:
             MYSQL_PASSWORD: password
     api:
         container_name: template-api
-        build: ./api
+        build: .
         image: treed1104/template-api:latest
         restart: always
         depends_on:
