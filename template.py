@@ -9,7 +9,7 @@ from resources import template_resource
 ## Create our Flask app and connect it to our database
 app = Flask(__name__)
 api = Api(app)
-app.config.from_pyfile('template.cfg')
+app.config.from_pyfile('configs/template.cfg')
 CORS(app)
 db.init_app(app)
 with app.app_context():

@@ -6,7 +6,7 @@ from template import app
 class UnitTest_Template(unittest.TestCase):
     ## Setup Functions
     def setUp(self):
-        app.config.from_pyfile('testing.cfg')   ## Take a copy of example.cfg and add the test database URI, or this will crash here
+        app.config.from_pyfile('configs/testing.cfg')   ## Take a copy of example.cfg and add the test database URI, or this will crash here
         self.app = app.test_client()
         with app.app_context():
             db.create_all()
@@ -19,7 +19,7 @@ class UnitTest_Template(unittest.TestCase):
 class FeatureTest_Template(unittest.TestCase):
     ## Setup Functions
     def setUp(self):
-        app.config.from_pyfile('testing.cfg')   ## Take a copy of example.cfg and add the test database URI, or this will crash here
+        app.config.from_pyfile('configs/testing.cfg')   ## Take a copy of example.cfg and add the test database URI, or this will crash here
         self.app = app.test_client()
         with app.app_context():
             db.create_all()

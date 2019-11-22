@@ -21,16 +21,13 @@ COPY ./requirements.txt ./
 RUN pip3 install --no-cache-dir -r ./requirements.txt
 
 ## Copy the Flask App source files
-COPY ./shared.py ./template.py ./scripts/boot.sh ./
-COPY ./configs/template.cfg ./configs/template.cfg
-COPY ./models ./models
-COPY ./resources ./resources
+COPY ./scripts/boot_dev.sh ../
 
 ## Give the boot script run permissions
-RUN chmod +x ./boot.sh
+RUN chmod +x ../boot_dev.sh
 
 ## Set out exposed port
 EXPOSE 5000
 
 ## Run out boot script
-ENTRYPOINT ["./boot.sh"]
+ENTRYPOINT ["../boot_dev.sh"]
