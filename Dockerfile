@@ -21,8 +21,8 @@ COPY ./requirements.txt ./
 RUN pip3 install --no-cache-dir -r ./requirements.txt
 
 ## Copy the Flask App source files
-COPY ./shared.py ./template.py ./scripts/boot.sh ./
-COPY ./configs/template.cfg ./configs/template.cfg
+COPY ./shared.py ./main.py ./scripts/boot.sh ./
+COPY ./configs/main.cfg ./configs/main.cfg
 COPY ./models ./models
 COPY ./resources ./resources
 
