@@ -1,7 +1,7 @@
 import json
 import unittest
 from shared import db
-from template import app
+from main import app
 
 class UnitTest_Template(unittest.TestCase):
     ## Setup Functions
