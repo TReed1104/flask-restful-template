@@ -5,7 +5,7 @@ mkdir results
 sleep 15s
 
 ## Run the testing scripts
-nose2 --plugin nose2.plugins.junitxml -c configs/unittest.cfg test_template
+nose2 --plugin nose2.plugins.junitxml -c configs/unittest.cfg
 
 ## If the tests pass, Start the app
 exec gunicorn --bind 0.0.0.0:5000 template:app
