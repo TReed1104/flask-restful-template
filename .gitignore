@@ -1,4 +1,8 @@
 __pycache__
 .coverage
 testing.cfg
-template.cfg
+dev.cfg
+main.cfg
+.DS_Store
+.vscode
+results/
