@@ -4,4 +4,4 @@
 sleep 15s
 
 ## Start the app
-exec gunicorn --bind 0.0.0.0:5000 --reload template:app
+exec gunicorn --bind 0.0.0.0:5000 --reload main:app

@@ -8,6 +8,6 @@ sleep 15s
 nose2 --plugin nose2.plugins.junitxml -c configs/unittest.cfg
 
 ## If the tests pass, Start the app
-exec gunicorn --bind 0.0.0.0:5000 template:app
+exec gunicorn --bind 0.0.0.0:5000 main:app
 
 ## TODO: If fail exit 1
