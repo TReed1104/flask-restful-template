@@ -47,12 +47,13 @@ Marshmellow is a dependency of Webargs, we had to freeze this at this version du
 ### API - Nose2 - 0.9.1
 Nose2 is an extension of the Python Unittest module, we use this as part of our unit, feature and integration testing. The project is set to export the results of these tests as JUnit XML files.
 
-### Pip3 Commands
-Batch Install the Pip3 modules at their frozen version by the following commands whilst in the projects root directory.
-```pip3
-pip3 install -r requirements.txt
-```
-
 <br>
 
 ---
+
+## Commands
+### Pip3
+Batch Install the Pip3 modules at their frozen version by the following commands whilst in the projects root directory.
+```pip3
+pip3 install -r api/requirements.txt
+```
