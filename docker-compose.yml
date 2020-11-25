@@ -3,7 +3,7 @@ networks:
     flask-api-network:
         name: flask-api-network
 services:
-    flask-api-nginx:
+    nginx:
         container_name: flask-api-nginx
         image: nginx:latest
         restart: always
@@ -15,7 +15,7 @@ services:
         networks:
             - flask-api-network
 
-    flask-api-db:
+    db-mysql:
         container_name: flask-api-db
         image: mysql:latest
         command: --init-file /usr/src/app/init.sql
@@ -26,6 +26,10 @@ services:
             - "3306"
         restart: always
         environment:
+            MYSQL_ROOT_PASSWORD: <PASSWORD>
+            MYSQL_DATABASE: <DATABASE_NAME>
+            MYSQL_USER: <USER>
+            MYSQL_PASSWORD: <PASSWORD>
         networks:
             - flask-api-network
 
