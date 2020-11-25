@@ -6,3 +6,4 @@ main.cfg
 .DS_Store
 .vscode
 results/
+volumes/
