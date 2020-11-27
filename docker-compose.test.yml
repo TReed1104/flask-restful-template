@@ -1,15 +1,15 @@
 version: "3.5"
 networks:
-    flask-api-network:
-        name: flask-api-network
+    flask-api-test-network:
+        name: flask-api-test-network
 services:
-    db-mysql:
-        container_name: flask-api-db
+    db-mysql-test:
+        container_name: flask-api-test-db
         image: mysql:latest
         command: --init-file /usr/src/app/init.sql
         volumes:
             - ./mysql/init.sql:/usr/src/app/init.sql
-            - ./volumes/test_db:/var/lib/mysql
+            - ./volumes/db:/var/lib/mysql
         expose:
             - "3306"
         restart: always
@@ -19,10 +19,10 @@ services:
             MYSQL_USER: <USER>
             MYSQL_PASSWORD: <PASSWORD>
         networks:
-            - flask-api-network
+            - flask-api-test-network
 
-    flask-api:
-        container_name: flask-api
+    flask-api-test:
+        container_name: flask-api-test
         build:
             context: ./api
             dockerfile: Dockerfile.test
@@ -33,4 +33,4 @@ services:
         ports:
             - "5000:5000"
         networks:
-            - flask-api-network
+            - flask-api-test-network
